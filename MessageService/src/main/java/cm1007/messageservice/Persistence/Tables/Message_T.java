@@ -9,8 +9,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Message_T")
 public class Message_T {
-    // Maybe worth to have "Date" so that messages can be orderd?
-    // LOcalDateTime type?
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,16 +37,6 @@ public class Message_T {
 
     @Getter @Setter
     private String answer;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "source_user_id", insertable = false, updatable = false)
-    @Getter @Setter
-    private User_T sourceUser;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "target_user_id", insertable = false, updatable = false)
-    @Getter @Setter
-    private User_T targetUser;
 
     public Message_T(){
     }
