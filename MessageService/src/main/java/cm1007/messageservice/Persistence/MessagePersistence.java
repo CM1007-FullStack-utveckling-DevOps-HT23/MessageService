@@ -2,6 +2,7 @@ package cm1007.messageservice.Persistence;
 
 import cm1007.messageservice.Core.Interfaces.IMessagePersistence;
 import cm1007.messageservice.Core.Message;
+import cm1007.messageservice.Core.User;
 import cm1007.messageservice.Persistence.Tables.Message_T;
 import cm1007.messageservice.Persistence.Tables.User_T;
 import jakarta.transaction.Transactional;
@@ -17,8 +18,6 @@ import java.util.Optional;
 public class MessagePersistence implements IMessagePersistence {
     @Autowired
     private MessageRepository _messageRepository;
-
-    /*
 
     @Override
     public List<Message> getMessagesBySourceId(Long userId) {
@@ -36,7 +35,6 @@ public class MessagePersistence implements IMessagePersistence {
         }
         return result;
     }
-     */
 
     //Take out messages that are answered
     @Override

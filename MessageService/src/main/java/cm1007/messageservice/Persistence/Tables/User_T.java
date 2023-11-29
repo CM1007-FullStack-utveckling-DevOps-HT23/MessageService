@@ -1,6 +1,6 @@
 package cm1007.messageservice.Persistence.Tables;
 
-import fs.cm1007.patientspring.enumerations.Role;
+import cm1007.messageservice.enumerations.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
