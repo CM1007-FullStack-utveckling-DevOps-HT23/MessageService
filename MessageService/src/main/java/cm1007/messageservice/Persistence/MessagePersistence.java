@@ -2,7 +2,6 @@ package cm1007.messageservice.Persistence;
 
 import cm1007.messageservice.Core.Interfaces.IMessagePersistence;
 import cm1007.messageservice.Core.Message;
-import cm1007.messageservice.Core.User;
 import cm1007.messageservice.Persistence.Tables.Message_T;
 import cm1007.messageservice.Persistence.Tables.User_T;
 import jakarta.transaction.Transactional;
@@ -19,6 +18,7 @@ public class MessagePersistence implements IMessagePersistence {
     @Autowired
     private MessageRepository _messageRepository;
 
+
     @Override
     public List<Message> getMessagesBySourceId(Long userId) {
         if(userId == null) return null;
@@ -26,12 +26,8 @@ public class MessagePersistence implements IMessagePersistence {
 
         List<Message> result = new ArrayList<>();
         for(Message_T m : messages){
-            User_T s = m.getSourceUser();
-            User_T t = m.getTargetUser();
             result.add(new Message(m.getId(),m.getSourceUserId(), m.getTargetUserId(), m.getMessage(),
-                    m.getSentDate(), m.getAnswerDate(), m.getAnswer(),
-                    new User(s.getId(), s.getRole(), s.getFullName()),
-                    new User(t.getId(), t.getRole(), t.getFullName())));
+                    m.getSentDate(), m.getAnswerDate(), m.getAnswer()));
         }
         return result;
     }
@@ -44,12 +40,8 @@ public class MessagePersistence implements IMessagePersistence {
 
         List<Message> result = new ArrayList<>();
         for(Message_T m : messages){
-            User_T s = m.getSourceUser();
-            User_T t = m.getTargetUser();
             result.add(new Message(m.getId(),m.getSourceUserId(), m.getTargetUserId(), m.getMessage(),
-                    m.getSentDate(), m.getAnswerDate(), m.getAnswer(),
-                    new User(s.getId(), s.getRole(), s.getFullName()),
-                    new User(t.getId(), t.getRole(), t.getFullName())));
+                    m.getSentDate(), m.getAnswerDate(), m.getAnswer()));
         }
         return result;
     }

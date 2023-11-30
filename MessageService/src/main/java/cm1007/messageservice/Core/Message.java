@@ -29,12 +29,6 @@ public class Message {
     @Getter @Setter
     private String answer;
 
-    @Setter @Getter
-    private User sourceUser;
-
-    @Setter @Getter
-    private User targetUser;
-
     public Message() {
     }
 
@@ -53,19 +47,5 @@ public class Message {
         this.sentDate = sentDate;
         this.answerDate = answerDate;
         this.answer = answer;
-    }
-
-    //Potential eager load
-    public Message(Long id, Long sourceUserId, Long targetUserId, String message, LocalDateTime sentDate,
-                   LocalDateTime answerDate, String answer, User sourceUser, User targetUser) {
-        this.id = id;
-        this.sourceUserId = sourceUserId;
-        this.targetUserId = targetUserId;
-        this.message = message;
-        this.sentDate = sentDate;
-        this.answerDate = answerDate;
-        this.answer = answer;
-        this.sourceUser = sourceUser;
-        this.targetUser = targetUser;
     }
 }

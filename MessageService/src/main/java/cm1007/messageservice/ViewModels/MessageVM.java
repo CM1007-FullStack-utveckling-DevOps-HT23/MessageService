@@ -30,17 +30,11 @@ public class MessageVM {
     @Getter @Setter
     private String answer;
 
-    @Getter @Setter
-    private String targetFullName;
-
-    @Getter @Setter
-    private String sourceFullName;
-
     public MessageVM() {
     }
 
     public MessageVM(Long id, Long sourceUserId, Long targetUserId, String message,
-                           LocalDateTime sentDate, LocalDateTime answerDate, String answer, String targetFullName, String sourceFullName) {
+                           LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
         this.id = id;
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
@@ -48,7 +42,5 @@ public class MessageVM {
         this.sentDate = sentDate;
         this.answerDate = answerDate;
         this.answer = answer;
-        this.targetFullName = targetFullName;
-        this.sourceFullName = sourceFullName;
     }
 }

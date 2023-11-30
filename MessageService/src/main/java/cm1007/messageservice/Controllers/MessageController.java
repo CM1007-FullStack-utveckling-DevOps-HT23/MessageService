@@ -59,8 +59,7 @@ public class MessageController {
         List<MessageVM> result = new ArrayList<>();
         for (Message m : messages) {
             result.add(new MessageVM(m.getId(), m.getSourceUserId(), m.getTargetUserId(),
-                    m.getMessage(), m.getSentDate(), m.getAnswerDate(), m.getAnswer(),
-                    m.getTargetUser().fullName, m.getSourceUser().fullName));
+                    m.getMessage(), m.getSentDate(), m.getAnswerDate(), m.getAnswer()));
         }
         return result;
     }
