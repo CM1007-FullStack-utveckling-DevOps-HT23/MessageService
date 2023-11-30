@@ -1,6 +1,5 @@
 package cm1007.messageservice.Persistence;
 
-import cm1007.messageservice.Persistence.Tables.Message_T;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

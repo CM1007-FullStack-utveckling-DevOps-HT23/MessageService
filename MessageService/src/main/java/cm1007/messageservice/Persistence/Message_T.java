@@ -1,4 +1,4 @@
-package cm1007.messageservice.Persistence.Tables;
+package cm1007.messageservice.Persistence;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -2,8 +2,6 @@ package cm1007.messageservice.Persistence;
 
 import cm1007.messageservice.Core.Interfaces.IMessagePersistence;
 import cm1007.messageservice.Core.Message;
-import cm1007.messageservice.Persistence.Tables.Message_T;
-import cm1007.messageservice.Persistence.Tables.User_T;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
