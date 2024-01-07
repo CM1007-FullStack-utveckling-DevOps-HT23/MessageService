@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface IMessageService {
 
-    List<Message> getMessagesBySourceId(Long userId);
+    List<Message> getMessagesBySourceId(String userId);
 
-    List<Message> getMessagesByTargetId(Long userId);
+    List<Message> getMessagesByTargetId(String userId);
 
-    boolean sendMessage(Long sourceUserId, Long targetUserId, String message);
+    boolean sendMessage(String sourceUserId, String targetUserId, String message);
 
     boolean answerMessage(Long messageId, String answer);
 }

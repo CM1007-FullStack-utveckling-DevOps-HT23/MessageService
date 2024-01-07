@@ -12,10 +12,10 @@ public class MessageTargetVM {
     private Long id;
 
     @Setter @Getter
-    private Long sourceUserId;
+    private String sourceUserId;
 
     @Setter @Getter
-    private Long targetUserId;
+    private String targetUserId;
 
     @Setter @Getter
     private String message;
@@ -33,7 +33,7 @@ public class MessageTargetVM {
 
     public MessageTargetVM() {}
 
-    public MessageTargetVM(Long id, Long sourceUserId, Long targetUserId, String message,
+    public MessageTargetVM(Long id, String sourceUserId, String targetUserId, String message,
                            LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
         this.id = id;
         this.sourceUserId = sourceUserId;

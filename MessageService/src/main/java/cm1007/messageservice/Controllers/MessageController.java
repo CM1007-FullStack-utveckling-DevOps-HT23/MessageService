@@ -20,7 +20,7 @@ public class MessageController {
     private IMessageService _messageService;
 
     @GetMapping("/source/{userId}")
-    public ResponseEntity<List<MessageVM>> getMessagesBySourceId(@PathVariable Long userId){
+    public ResponseEntity<List<MessageVM>> getMessagesBySourceId(@PathVariable String userId){
         List<Message> messages = _messageService.getMessagesBySourceId(userId);
         if (messages == null)
             return ResponseEntity.badRequest().build();
@@ -30,7 +30,7 @@ public class MessageController {
     }
 
     @GetMapping("/target/{userId}")
-    public ResponseEntity<List<MessageVM>> getMessagesByTargetId(@PathVariable Long userId){
+    public ResponseEntity<List<MessageVM>> getMessagesByTargetId(@PathVariable String userId){
         List<Message> messages = _messageService.getMessagesByTargetId(userId);
         if (messages == null)
             return ResponseEntity.badRequest().build();

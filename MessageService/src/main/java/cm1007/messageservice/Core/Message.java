@@ -12,10 +12,10 @@ public class Message {
     private Long id;
 
     @Setter @Getter
-    private Long sourceUserId;
+    private String sourceUserId;
 
     @Setter @Getter
-    private Long targetUserId;
+    private String targetUserId;
 
     @Setter @Getter
     private String message;
@@ -32,14 +32,14 @@ public class Message {
     public Message() {
     }
 
-    public Message(Long sourceUserId, Long targetUserId, String message) {
+    public Message(String sourceUserId, String targetUserId, String message) {
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
         this.message = message;
     }
 
     //Lazy load
-    public Message(Long id, Long sourceUserId, Long targetUserId, String message, LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
+    public Message(Long id, String sourceUserId, String targetUserId, String message, LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
         this.id = id;
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;

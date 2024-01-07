@@ -10,11 +10,15 @@ import java.time.LocalDateTime;
 
 public class MessageCreateVM {
     @NotNull
+    @NotEmpty
     @Setter @Getter
-    Long sourceUserId;
+    String sourceUserId;
+
     @NotNull
+    @NotEmpty
     @Setter @Getter
-    Long targetUserId;
+    String targetUserId;
+
     @NotNull
     @NotEmpty
     @Setter @Getter
@@ -23,7 +27,7 @@ public class MessageCreateVM {
     public MessageCreateVM() {
     }
 
-    public MessageCreateVM(Long sourceUserId, Long targetUserId, String message) {
+    public MessageCreateVM(String sourceUserId, String targetUserId, String message) {
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
         this.message = message;

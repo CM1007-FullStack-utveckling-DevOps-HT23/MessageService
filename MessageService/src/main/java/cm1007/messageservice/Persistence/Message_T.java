@@ -17,11 +17,11 @@ public class Message_T {
 
     @Column(name = "source_user_id")
     @Getter @Setter
-    private Long sourceUserId; // User source id
+    private String sourceUserId; // User source id
 
     @Column(name = "target_user_id")
     @Getter @Setter
-    private Long targetUserId; // User dest. id
+    private String targetUserId; // User dest. id
 
     @Getter @Setter
     private String message;
@@ -41,14 +41,14 @@ public class Message_T {
     public Message_T(){
     }
 
-    public Message_T(Long sourceUserId, Long targetUserId, String message, LocalDateTime sentDate){
+    public Message_T(String sourceUserId, String targetUserId, String message, LocalDateTime sentDate){
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
         this.message = message;
         this.sentDate = sentDate;
     }
 
-    public Message_T(Long sourceUserId, Long targetUserId, String message, LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
+    public Message_T(String sourceUserId, String targetUserId, String message, LocalDateTime sentDate, LocalDateTime answerDate, String answer) {
         this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
         this.message = message;

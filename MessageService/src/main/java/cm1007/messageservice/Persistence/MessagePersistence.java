@@ -18,7 +18,7 @@ public class MessagePersistence implements IMessagePersistence {
 
 
     @Override
-    public List<Message> getMessagesBySourceId(Long userId) {
+    public List<Message> getMessagesBySourceId(String userId) {
         if(userId == null) return null;
         List<Message_T> messages = _messageRepository.findAllBySourceUserId(userId); //This will never return null
 
@@ -32,7 +32,7 @@ public class MessagePersistence implements IMessagePersistence {
 
     //Take out messages that are answered
     @Override
-    public List<Message> getMessagesByTargetId(Long userId) {
+    public List<Message> getMessagesByTargetId(String userId) {
         if(userId == null) return null;
         List<Message_T> messages = _messageRepository.findAllByTargetUserIdAndAnswerIsNull(userId); //This will never return null
 
@@ -46,7 +46,7 @@ public class MessagePersistence implements IMessagePersistence {
 
     @Override
     @Transactional
-    public boolean sendMessage(Long sourceUserId, Long targetUserId, String message) {
+    public boolean sendMessage(String sourceUserId, String targetUserId, String message) {
         if(sourceUserId == null || targetUserId == null || message == null)
             return false;
 

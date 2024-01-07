@@ -14,17 +14,17 @@ public class MessageService implements IMessageService {
     private IMessagePersistence _messagePersistence;
 
     @Override
-    public List<Message> getMessagesBySourceId(Long userId) {
+    public List<Message> getMessagesBySourceId(String userId) {
         return _messagePersistence.getMessagesBySourceId(userId);
     }
 
     @Override
-    public List<Message> getMessagesByTargetId(Long userId) {
+    public List<Message> getMessagesByTargetId(String userId) {
         return _messagePersistence.getMessagesByTargetId(userId);
     }
 
     @Override
-    public boolean sendMessage(Long sourceUserId, Long targetUserId, String message) {
+    public boolean sendMessage(String sourceUserId, String targetUserId, String message) {
         return _messagePersistence.sendMessage(sourceUserId, targetUserId, message);
     }
 
